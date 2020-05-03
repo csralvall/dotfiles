@@ -1,0 +1,9 @@
+[user]
+	email = csralvarezvallero12@gmail.com
+	name = Cesar Alvarez Vallero
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[alias]
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all

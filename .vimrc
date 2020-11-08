@@ -12,6 +12,11 @@ syntax enable			    " enable syntax processing
 let g:molokai_original=1    " original molokai background color
 colorscheme molokai		    " molokai colorscheme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Buffers, Windows & Tabs 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hidden
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
 " Spaces & Tabs 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

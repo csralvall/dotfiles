@@ -1,3 +1,6 @@
 [submodule ".vim/pack/plugins/start/airline"]
 	path = .vim/pack/plugins/start/airline
 	url = https://github.com/vim-airline/vim-airline.git
+[submodule ".vim/pack/colors/start/molokai"]
+	path = .vim/pack/colors/start/molokai
+	url = https://github.com/tomasr/molokai.git

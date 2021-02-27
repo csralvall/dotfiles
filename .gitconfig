@@ -6,4 +6,4 @@
 [merge]
 	tool = vimdiff
 [alias]
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lola = log --pretty=format:\"%C(yellow)%h %C(auto)| %C(green)%ad %C(auto)| %s%d %C(cyan)[%an]\" --graph --date=short

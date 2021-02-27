@@ -8,6 +8,11 @@
 
 " Colors 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if (has("termguicolors"))   " use 'true colors' if possible
+    set termguicolors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 syntax enable			    " enable syntax processing
 let g:molokai_original=1    " original molokai background color
 colorscheme molokai		    " molokai colorscheme

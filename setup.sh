@@ -2,9 +2,8 @@
 
 # Author: Tom Hudson
 
-dotfilesDir=$(pwd)
-
-function linkDotfile {
+function linkFile {
+  filesDir=$(pwd)
   dest="${HOME}/${1}"
   dateStr=$(date +%Y-%m-%d-%H%M)
 
@@ -25,12 +24,12 @@ function linkDotfile {
   fi
 
   echo "Creating new symlink: ${dest}"
-  ln -s ${dotfilesDir}/${1} ${dest}
+  ln -s ${filesDir}/${1} ${dest}
 }
 
-linkDotfile .vim
-linkDotfile .vimrc
-linkDotfile .bashrc
-linkDotfile .gitconfig
-linkDotfile .tmux.conf
+linkFile .vim
+linkFile .vimrc
+linkFile .bashrc
+linkFile .gitconfig
+linkFile .tmux.conf
 

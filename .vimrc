@@ -8,14 +8,14 @@
 
 " Colors 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if (has("termguicolors"))   " use 'true colors' if possible
+if (has("termguicolors"))		" use 'true colors' if possible
     set termguicolors
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
-syntax enable			    " enable syntax processing
+syntax enable								" enable syntax processing
 let g:molokai_original=1    " original molokai background color
-colorscheme molokai		    " molokai colorscheme
+colorscheme molokai					" molokai colorscheme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Copy & Paste
@@ -30,19 +30,19 @@ set hidden
  
 " Spaces & Tabs 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set tabstop=4               " number of visual spaces per TAB
-set softtabstop=4		    " number of spaces in tab when editing
-set shiftwidth=4		    " number of spaces inserted for identation
-set expandtab			    " tabs are spaces
+set tabstop=2						" number of visual spaces per TAB
+set softtabstop=2				" number of spaces in tab when editing
+set shiftwidth=2		    " number of spaces inserted for identation
+set expandtab						" tabs are spaces
 set autoindent			    " turn on autoidentation
-set smartindent             " do smart autoindenting when starting a new line
+set smartindent         " do smart autoindenting when starting a new line
 " turnoff expandtab for editing makefiles
 autocmd FileType make setlocal noexpandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
 " UI config 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set number			        " show line numbers
+set number								" show line numbers
 set relativenumber		    " show relative numbering
 augroup numbertoggle	    " hybrid line numbers
 	autocmd!
@@ -51,24 +51,24 @@ augroup numbertoggle	    " hybrid line numbers
 	" turn on relativenumber
 	autocmd BufLeave,FocusLost,InsertEnter	 * set norelativenumber
 augroup END
-set showcmd                 " show command in bottombar
+set showcmd               " show command in bottombar
 set cursorline		        " highlight current line
-set wildmenu			    " visual autocomplete for command menu
-set showmatch			    " highlight matching [{()}]
+set wildmenu							" visual autocomplete for command menu
+set showmatch							" highlight matching [{()}]
 set laststatus=2	        " show status line at the bottom
-set mouse+=a			    " mouse support
-set colorcolumn=80          " visual support for text length
+set mouse+=a							" mouse support
+set colorcolumn=80        " visual support for text length
 " filetype indent on	    " load filetype-specfic indent files
 " filetype plugin on	    " load filetype specific plugin files
-" set lazyredraw		    " redraw only when we need to
+" set lazyredraw					" redraw only when we need to
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
 " Searching 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set incsearch			    " search as characters are entered
-set hlsearch			    " highlight matches
-set ignorecase			    " ignore case in searches by default
-set smartcase			    " case sensitive if an uppercase is entered
+set incsearch							" search as characters are entered
+set hlsearch							" highlight matches
+set ignorecase						" ignore case in searches by default
+set smartcase							" case sensitive if an uppercase is entered
 " turn off search highlight
 vnoremap <C-h> :nohlsearch<CR>
 nnoremap <C-h> :nohlsearch<CR>
@@ -76,10 +76,10 @@ nnoremap <C-h> :nohlsearch<CR>
  
 " Folding 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set foldmethod=indent	    " fold based on indent level
+"set foldmethod=indent	  " fold based on indent level
 "set foldnestmax=10		    " 10 nested fold max
-"set foldenable			    " don't fold files by default on open
-"nnoremap <space> za        " space open/closes folds
+"set foldenable						" don't fold files by default on open
+"nnoremap <space> za      " space open/closes folds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
 " Lose bad habits 

@@ -195,6 +195,8 @@ HISTFILESIZE=2000
 
 # Set EDITOR var
 export EDITOR=/usr/bin/vim
+# Set BROWSER var
+export BROWSER=/usr/bin/brave
 
 # # ex - archive extractor
 # # usage: ex <file>
@@ -220,3 +222,4 @@ ex ()
   fi
 }
 
+source /usr/share/nvm/init-nvm.sh

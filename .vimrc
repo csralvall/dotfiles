@@ -124,3 +124,11 @@ autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Helptags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins need to be added to runtimepath before helptags can be generated
+packloadall								" Load all plugins now
+" Load all of helptags now, after plugins have been loaded.
+silent! helptags ALL			" All messages and errors will be ignored
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+

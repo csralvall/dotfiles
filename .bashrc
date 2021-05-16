@@ -198,8 +198,8 @@ export EDITOR=/usr/bin/vim
 # Set BROWSER var
 export BROWSER=/usr/bin/brave
 
-# # ex - archive extractor
-# # usage: ex <file>
+# ex - archive extractor
+# usage: ex <file>
 ex ()
 {
   if [ -f $1 ] ; then
@@ -221,5 +221,16 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+# SSH: login one time per login
+
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+	  eval `ssh-agent`
+		ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
+ssh-add -l > /dev/null || ssh-add
 
 source /usr/share/nvm/init-nvm.sh

@@ -1,6 +1,7 @@
 [user]
 	email = csralvarezvallero12@gmail.com
 	name = Cesar Alvarez Vallero
+	signingkey = 8DEF166DA59D7898
 [core]
 	editor = vim
 [merge]
@@ -9,3 +10,5 @@
   lola = log --pretty=format:\"%C(yellow)%h %C(auto)| %C(green)%ad %C(auto)| %s%d %C(cyan)[%an]\" --graph --date=short
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true

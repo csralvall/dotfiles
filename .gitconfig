@@ -12,4 +12,4 @@
 	defaultBranch = main
 [commit]
 	gpgsign = true
-	template = ./.gitmessage.txt
+	template = /home/csralvall/.gitmessage.txt

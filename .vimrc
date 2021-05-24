@@ -6,6 +6,11 @@
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" General
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible						" disable vi compatibility: better safe than sorry
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Colors 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if (has("termguicolors"))		" use 'true colors' if possible
@@ -58,8 +63,7 @@ set showmatch							" highlight matching [{()}]
 set laststatus=2	        " show status line at the bottom
 set mouse+=a							" mouse support
 set colorcolumn=80        " visual support for text length
-" filetype indent on	    " load filetype-specfic indent files
-" filetype plugin on	    " load filetype specific plugin files
+filetype plugin indent on	" load filetype-specfic indent and plugin files
 " set lazyredraw					" redraw only when we need to
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
@@ -76,10 +80,10 @@ nnoremap <C-h> :nohlsearch<CR>
  
 " Folding 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set foldmethod=indent	  " fold based on indent level
-"set foldnestmax=10		    " 10 nested fold max
-"set foldenable						" don't fold files by default on open
-"nnoremap <space> za      " space open/closes folds
+set foldmethod=indent	  " fold based on indent level
+set foldnestmax=10		  " 10 nested fold max
+set nofoldenable				" don't fold files by default on open
+nnoremap <space> za     " space open/closes folds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
 " Lose bad habits 
@@ -122,6 +126,14 @@ autocmd VimEnter * NERDTree	" Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree | wincmd p
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ALE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\		'json': ['fixjson'],
+\}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Helptags

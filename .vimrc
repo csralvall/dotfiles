@@ -32,7 +32,7 @@ set pastetoggle=<F12>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hidden
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
- 
+
 " Spaces & Tabs 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=2						" number of visual spaces per TAB
@@ -41,8 +41,6 @@ set shiftwidth=2		    " number of spaces inserted for identation
 set expandtab						" tabs are spaces
 set autoindent			    " turn on autoidentation
 set smartindent         " do smart autoindenting when starting a new line
-" turnoff expandtab for editing makefiles
-autocmd FileType make setlocal noexpandtab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
 " UI config 
@@ -85,6 +83,18 @@ set foldnestmax=10		  " 10 nested fold max
 set nofoldenable				" don't fold files by default on open
 nnoremap <space> za     " space open/closes folds
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" File extension specific commands
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Latex specification to avoid slowness on edition
+"autocmd FileType tex
+"   \ set nocursorline |
+"   \ set nornu |
+"  	\ set number |
+" 	\ let g:loaded_matchparen=1
+" turnoff expandtab for editing makefiles
+autocmd FileType make setlocal noexpandtab
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
  
 " Lose bad habits 
 " http://vimcasts.org/blog/2013/02/habit-breaking-habit-making/
@@ -121,7 +131,6 @@ let g:airline_powerline_fonts=1
 
 " NERDTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd VimEnter * NERDTree	" Start NERDTree and leave the cursor in it.
 " Start NERDTree and put the cursor back in the other window.
 autocmd VimEnter * NERDTree | wincmd p
 " Exit Vim if NERDTree is the only window left.
@@ -133,6 +142,12 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \		'json': ['fixjson'],
+\		'python': ['black']
+\}
+
+" Latex specification to avoid slowness on edition
+let g:ale_pattern_options = {
+\		'\.tex$': {'ale_enabled': 0}
 \}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
